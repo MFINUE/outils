@@ -64,7 +64,7 @@ export default function CommitteeCreator() {
                topics: Array.from({ length: Number(data.get("topic-n") as string) }, (_, i) => ({
                     title: data.get(`t-title-${i}`),
                     description: data.get(`t-description-${i}`),
-                    SDGs: [data.get(`t-sdg1-${i}`), data.get(`t-sdg2-${i}`)].filter(x => !!x).map(x => Number(x))
+                    SDG: [data.get(`t-sdg1-${i}`), data.get(`t-sdg2-${i}`)].filter(x => !!x).map(x => Number(x))
                }))
           })
      }) as FormEventHandler<HTMLFormElement>, [])
