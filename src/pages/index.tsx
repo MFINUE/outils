@@ -4,7 +4,7 @@ import { useEffect } from "react"
 export default function Home() {
   const router = useRouter()
   useEffect(() => {
-    if (typeof window !== "undefined") return router.push("/committee")
+    if (typeof window !== "undefined") router.push("/committee")
   }, [])
   return (
     <>
