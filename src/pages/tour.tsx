@@ -12,8 +12,8 @@ export default function TourCreator() {
           setOutput({
                id: data.get("id"),
                name: data.get("name"),
-               map: data.get("description"),
-               photo: data.get("description"),
+               map: data.get("map"),
+               photo: data.get("photo"),
           })
      }) as FormEventHandler<HTMLFormElement>, [])
 
