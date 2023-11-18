@@ -4,15 +4,20 @@ import MenuIcon from '@mui/icons-material/Menu';
 import type { AppProps } from 'next/app'
 import { ReactNode, useState } from 'react';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import MapIcon from '@mui/icons-material/Map';
+import Link from 'next/link';
+import Head from 'next/head';
 
 const DrawerButton = (props: { label: string, icon: ReactNode, href: string }) => {
   return <ListItem disablePadding>
-    <ListItemButton>
-      <ListItemIcon>
-        {props.icon}
-      </ListItemIcon>
-      <ListItemText primary={props.label} />
-    </ListItemButton>
+    <Link href={props.href}>
+      <ListItemButton>
+        <ListItemIcon>
+          {props.icon}
+        </ListItemIcon>
+        <ListItemText primary={props.label} />
+      </ListItemButton>
+    </Link>
   </ListItem>
 }
 
@@ -21,6 +26,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return <>
     <AppBar position="static">
+      <Head>
+        <title>MFINUE Outils</title>
+      </Head>
       <Toolbar>
         <Drawer
           anchor="left"
@@ -29,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
         >
           <List>
             <DrawerButton label="Créateur de comité" icon={<AutoFixHighIcon />} href={'/committee'} />
+            <DrawerButton label="Créateur de parcour" icon={<MapIcon />} href={'/tour'} />
           </List>
         </Drawer>
         <IconButton
