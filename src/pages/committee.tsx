@@ -44,7 +44,7 @@ const TopicForm = (props: { index: number }) => {
                     </Select>
                </FormControl>
           </Stack>
-          <TextField label="Description" name={`t-description-${props.index}`} multiline minRows={2} defaultValue="Le maintien de la paix entre nations voisines implique le respect non seulement de leurs frontières terrestres, mais également de leur espace aérien et maritime national. C’est pourquoi la reconnaissance et la protection de la souveraineté et du contrôle sur..." /><TextField label="Description" name={`t-description-${props.index}`} multiline minRows={2} defaultValue="Le maintien de la paix entre nations voisines implique le respect non seulement de leurs frontières terrestres, mais également de leur espace aérien et maritime national. C’est pourquoi la reconnaissance et la protection de la souveraineté et du contrôle sur..." />
+          <TextField label="Description" name={`t-description-${props.index}`} multiline minRows={2} defaultValue="Le maintien de la paix entre nations voisines implique le respect non seulement de leurs frontières terrestres, mais également de leur espace aérien et maritime national. C’est pourquoi la reconnaissance et la protection de la souveraineté et du contrôle sur..." />
           <TextField label="Guide URL" name={`t-guide-${props.index}`} defaultValue="https://drive.google.com/file/d/1cnopNNuqgHH0HZkMaKaiElSBIIvnLzpQ/view?usp=sharing" />
      </>
 }
