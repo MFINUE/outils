@@ -73,7 +73,7 @@ export default function TourCreator() {
                     <Typography fontFamily="monospace" color="white" p={1}>
                          <span style={{ opacity: .4, userSelect: "none", paddingRight: 12 }}>descartes/functions{">"}</span>
                          <span id="selectable-output" style={{ wordBreak: "break-all" }}>
-                              <span style={{ color: "yellow" }}>npm run</span> <span style={{ color: "#17AF61" }}>create-tour</span> {[...JSON.stringify(output)].map(x => x.charCodeAt(0)).join("A")}
+                              {JSON.stringify(output)}
                          </span>
                     </Typography>
                </Paper>
