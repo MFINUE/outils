@@ -19,7 +19,7 @@ export default function TourCreator() {
 
      return <>
           <Container maxWidth="xl" sx={{ mt: 3 }}>
-               <Typography variant="h4">Créateur de comité</Typography>
+               <Typography variant="h4">Créateur de parcour</Typography>
                <Divider />
                <Box component="form" ref={form} noValidate autoComplete="off" mt={3} pb={5} onChange={handleChange}>
                     <Stack flexDirection="row" mb={2}>
