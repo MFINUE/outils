@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app'
 import { ReactNode, useState } from 'react';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import MapIcon from '@mui/icons-material/Map';
+import MailIcon from '@mui/icons-material/Mail';
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -38,6 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <List>
             <DrawerButton label="Créateur de comité" icon={<AutoFixHighIcon />} href={'/committee'} />
             <DrawerButton label="Créateur de parcour" icon={<MapIcon />} href={'/tour'} />
+            <DrawerButton label="Signature d'email" icon={<MailIcon />} href={'/signature'} />
           </List>
         </Drawer>
         <IconButton
