@@ -142,6 +142,17 @@ export default function TourCreator() {
           </Button>
         </Box>
 
+        {/* New Video URL Input */}
+        <TextField
+        fullWidth
+        label="Lien de la Vidéo"
+        name="videoURL"
+        value={output.videoURL}
+        onChange={handleChange("videoURL")}
+        helperText="Lien vers la vidéo supplémentaire"
+        sx={{ mb: 4 }}
+        />
+
         <Typography variant="h5" gutterBottom>Sortie</Typography>
         <Paper variant="outlined" sx={{ bgcolor: "#282C34", mb: 20 }} onClick={(ev) => {
           const range = document.createRange();
