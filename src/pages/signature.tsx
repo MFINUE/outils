@@ -28,7 +28,7 @@ export default function TourCreator() {
                               required
                               name="name"
                               label="Nom"
-                              defaultValue="Bora Ciner"
+                              defaultValue="Alper Özer"
                          />
                          <Box mx={4} />
                          <TextField
@@ -36,7 +36,7 @@ export default function TourCreator() {
                               required
                               name="job"
                               label="Tâche"
-                              defaultValue="Responsable de l'Informatique du MFINUE 2023"
+                              defaultValue="Responsable de l'Informatique du MFINUE 2025"
                          />
                     </Stack>
 
@@ -45,7 +45,7 @@ export default function TourCreator() {
                          required
                          label="Lien d'image"
                          name="photo"
-                         defaultValue="https://www.mfinue.org/wp-content/uploads/2023/04/logo-2023-300.png"
+                         defaultValue="https://mfinue.org/wp-content/uploads/2025/03/Theres-a-sphere-in-the-very-back-2.png"
                          sx={{ my: 2 }}
                     />
                     <TextField
@@ -53,7 +53,7 @@ export default function TourCreator() {
                          required
                          name="title"
                          label="Titre"
-                         defaultValue="MFINUE 2023"
+                         defaultValue="MFINUE 2025"
                     />
                </Box>
 
