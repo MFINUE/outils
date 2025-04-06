@@ -1,26 +1,22 @@
 import { useRouter } from "next/router";
-import React, { useState } from "react";
-import { createContext } from "vm";
+import React, {createContext, useState } from "react";
 
 type User = {
     logged: boolean;
 }
 
-interface AuthContextValues{
-    user: User | null
-}
 
 interface AuthContextProps {
     children : React.ReactNode
 }
 
 //Forgot how to make context sorry
-export const UserContext = createContext<AuthContextValues | null>(null);
+export const UserContext = createContext<User | null>(null);
 
 export default function AuthContextComponent({children} : AuthContextProps) {
     const [user , setUser] = useState<User | null>(null)
 
-    return <UserContext.Provider value={{user}}>
+    return <UserContext.Provider value={user!}>
         {children}
     </UserContext.Provider>
 
