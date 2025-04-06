@@ -1,8 +1,8 @@
 import { Box, Container, Divider, Paper, Stack, TextField, Typography } from "@mui/material";
-import { FormEventHandler, useCallback, useRef, useState } from "react";
+import { FormEventHandler, useCallback, useEffect, useRef, useState } from "react";
 
 export default function TourCreator() {
-     const [output, setOutput] = useState<{ name: string, job: string, photo: string, title: string }>({ name: "Bora Ciner", job: "Responsable de l'Informatique du MFINUE 2023", photo: "https://www.mfinue.org/wp-content/uploads/2023/04/logo-2023-300.png", title: "MFINUE 2023" });
+     const [output, setOutput] = useState<{ name: string, job: string, photo: string, title: string }>({ name: "Prénom Nom", job: "Responsable de l'Informatique du MFINUE 2026", photo: "https://mfinue.org/wp-content/uploads/2025/04/ti.png", title: "MFINUE 2026" });
 
      const form = useRef<HTMLFormElement>(null);
 
@@ -28,7 +28,7 @@ export default function TourCreator() {
                               required
                               name="name"
                               label="Nom"
-                              defaultValue="Alper Özer"
+                              defaultValue="Prénom Nom"
                          />
                          <Box mx={4} />
                          <TextField
@@ -36,7 +36,7 @@ export default function TourCreator() {
                               required
                               name="job"
                               label="Tâche"
-                              defaultValue="Responsable de l'Informatique du MFINUE 2025"
+                              defaultValue="Responsable de l'Informatique du MFINUE 2026"
                          />
                     </Stack>
 
@@ -45,7 +45,7 @@ export default function TourCreator() {
                          required
                          label="Lien d'image"
                          name="photo"
-                         defaultValue="https://mfinue.org/wp-content/uploads/2025/03/Theres-a-sphere-in-the-very-back-2.png"
+                         defaultValue="https://mfinue.org/wp-content/uploads/2025/04/ti.png"
                          sx={{ my: 2 }}
                     />
                     <TextField
@@ -53,12 +53,13 @@ export default function TourCreator() {
                          required
                          name="title"
                          label="Titre"
-                         defaultValue="MFINUE 2025"
+                         defaultValue="MFINUE 2026"
                     />
                </Box>
 
                <Typography variant="h5">Sortie</Typography>
                <Typography variant="subtitle2" gutterBottom>Copiez d'abord l'élément ci-dessous dans la fenêtre "Nouveau Courriel". Copiez ensuite à nouveau la signature de cette fenêtre, puis collez-la dans les paramètres de signature.</Typography>
+               <Typography fontStyle={"italic"} variant="subtitle2" gutterBottom>(Il suffit de changer la terminaison du lien de la photo pour le poste correstpondante "...ti.png")</Typography>
                <Divider />
 
                <Box sx={{ "a": { color: "#15c", textDecoration: "underline" } }} dangerouslySetInnerHTML={{
