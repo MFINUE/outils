@@ -5,18 +5,23 @@ type User = {
     logged: boolean;
 }
 
+interface UserContextValue {
+    user : User | null
+    setUser : React.Dispatch<React.SetStateAction<User | null>>;
+} 
 
-interface AuthContextProps {
+interface UserContextProps {
     children : React.ReactNode
 }
 
 //Forgot how to make context sorry
-export const UserContext = createContext<User | null>(null);
+export const UserContext = createContext<UserContextValue | null>(null);
 
-export default function AuthContextComponent({children} : AuthContextProps) {
+export default function UserContextComponent({children} : UserContextProps) {
     const [user , setUser] = useState<User | null>(null)
 
-    return <UserContext.Provider value={user!}>
+
+    return <UserContext.Provider value={{user , setUser}}>
         {children}
     </UserContext.Provider>
 
