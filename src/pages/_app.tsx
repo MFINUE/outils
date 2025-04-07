@@ -8,19 +8,9 @@ import MapIcon from '@mui/icons-material/Map';
 import MailIcon from '@mui/icons-material/Mail';
 import Link from 'next/link';
 import Head from 'next/head';
+import DrawerButton from '@/components/DrawerButton';
 
-const DrawerButton = (props: { label: string, icon: ReactNode, href: string }) => {
-  return <ListItem disablePadding>
-    <Link href={props.href}>
-      <ListItemButton>
-        <ListItemIcon>
-          {props.icon}
-        </ListItemIcon>
-        <ListItemText primary={props.label} />
-      </ListItemButton>
-    </Link>
-  </ListItem>
-}
+
 
 export default function App({ Component, pageProps }: AppProps) {
   const [drawer, setDrawer] = useState(false)
