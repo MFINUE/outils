@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, {createContext, useState } from "react";
+import React, {createContext, useContext, useState } from "react";
 
 type User = {
     logged: boolean;
@@ -30,10 +30,11 @@ export default function UserContextComponent({children} : UserContextProps) {
 
 
 //Gonna get passed the auth ct
-export function checkUser(user:User) {
-    const router = useRouter()
+export function checkUser() {
+    const {user , setUser} = useContext(UserContext)!
+    const router = useRouter();
     if(!user) {
-        router.push("/connexion")
+        router.push("/connexion");
     }
     else { } //If user logged in no need to push them away the componenet may load
 }
