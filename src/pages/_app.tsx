@@ -9,44 +9,22 @@ import MailIcon from '@mui/icons-material/Mail';
 import Link from 'next/link';
 import Head from 'next/head';
 import DrawerButton from '@/components/DrawerButton';
+import UserContextProvider from '@/context/AuthContext';
+import AppBarComponent from '@/components/AppBarComponent';
+import { useRouter } from 'next/router';
 
 
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [drawer, setDrawer] = useState(false)
 
+  const router = useRouter()
   return <>
-    <AppBar position="static">
-      <Head>
-        <title>MFINUE Outils</title>
-      </Head>
-      <Toolbar>
-        <Drawer
-          anchor="left"
-          open={drawer}
-          onClose={() => setDrawer(false)}
-        >
-          <List>
-            <DrawerButton label="Créateur de comité" icon={<AutoFixHighIcon />} href={'/committee'} />
-            <DrawerButton label="Créateur de parcour" icon={<MapIcon />} href={'/tour'} />
-            <DrawerButton label="Signature d'email" icon={<MailIcon />} href={'/signature'} />
-          </List>
-        </Drawer>
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-          onClick={() => setDrawer(true)}
-        >
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          MFINUE Outils
-        </Typography>
-      </Toolbar>
-    </AppBar>
-    <Component {...pageProps} />
+    <Head>
+      <title>MFINUE Outils</title>
+    </Head>
+    <UserContextProvider>
+      { !router.pathname.startsWith(`/login`) && <AppBarComponent />}
+      <Component {...pageProps} />
+    </UserContextProvider>
   </>
 }

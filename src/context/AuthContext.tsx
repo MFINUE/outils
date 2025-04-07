@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, {createContext, useContext, useState } from "react";
+import React, {createContext, ReactNode, useContext, useState } from "react";
 
 type User = {
     logged: boolean;
@@ -11,13 +11,13 @@ interface UserContextValue {
 } 
 
 interface UserContextProps {
-    children : React.ReactNode
+    children : ReactNode
 }
 
 //Forgot how to make context sorry
 export const UserContext = createContext<UserContextValue | null>(null);
 
-export default function UserContextComponent({children} : UserContextProps) {
+export default function UserContextProvider({children} : UserContextProps) {
     const [user , setUser] = useState<User | null>(null)
 
 
