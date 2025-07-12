@@ -62,6 +62,7 @@ export default function CommitteeCreator() {
                id: data.get("id"),
                name: data.get("name"),
                description: data.get("description"),
+               amendement: data.get("amendment"),
                topics: Array.from({ length: Number(data.get("topic-n") as string) }, (_, i) => ({
                     title: data.get(`t-title-${i}`),
                     description: data.get(`t-description-${i}`),
@@ -105,13 +106,23 @@ export default function CommitteeCreator() {
                          />
                     </Stack>
 
-                    <TextField
-                         fullWidth
-                         required
-                         label="Description"
-                         name="description"
-                         defaultValue="Comité de Désarmement"
-                    />
+                    <Stack flexDirection="row" mb={2}>
+                         <TextField
+                              fullWidth
+                              required
+                              label="Description"
+                              name="description"
+                              defaultValue="Comité de Désarmement"
+                         />
+                         <Box mx={1} />
+                         <TextField
+                              fullWidth
+                              required
+                              label="Amendement link"
+                              name="amendment"
+                              defaultValue={""}
+                         />
+                    </Stack>
 
                     <Container maxWidth="xs" sx={{ mx: "0", pl: "0 !important", my: 2 }}>
                          <Typography>Quantité de sujets</Typography>
