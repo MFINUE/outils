@@ -62,7 +62,7 @@ export default function CommitteeCreator() {
                id: data.get("id"),
                name: data.get("name"),
                description: data.get("description"),
-               amendement: data.get("amendment"),
+               amendements: data.get("amendments"),
                topics: Array.from({ length: Number(data.get("topic-n") as string) }, (_, i) => ({
                     title: data.get(`t-title-${i}`),
                     description: data.get(`t-description-${i}`),
@@ -119,7 +119,7 @@ export default function CommitteeCreator() {
                               fullWidth
                               required
                               label="Amendement link"
-                              name="amendment"
+                              name="amendments"
                               defaultValue={""}
                          />
                     </Stack>
